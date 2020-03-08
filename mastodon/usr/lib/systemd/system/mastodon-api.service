@@ -1,0 +1,16 @@
+[Unit]
+Description=Mastodon Streaming
+After=network.target
+
+[Service]
+Type=simple
+User=mastodon
+WorkingDirectory=/home/mastodon/app
+Environment="NODE_ENV=production"
+Environment="PORT=40404"
+ExecStart=/bin/npm run start
+TimeoutSec=15
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

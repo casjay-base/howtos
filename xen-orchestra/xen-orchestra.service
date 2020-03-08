@@ -1,0 +1,12 @@
+[Unit]
+Description= XO Server
+After=network-online.target
+
+[Service]
+WorkingDirectory=/opt/xen-orchestra/packages/xo-server/bin
+ExecStart=/usr/bin/yarn start
+Restart=always
+SyslogIdentifier=xo-server
+
+[Install]
+WantedBy=multi-user.target

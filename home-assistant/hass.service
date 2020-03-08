@@ -1,0 +1,15 @@
+[Unit]
+Description=Home Assistant
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/var/lib/homeassistant
+Environment=VIRTUAL_ENV="/var/lib/homeassistant"
+Environment=PATH="$VIRTUAL_ENV/bin:$PATH"
+Environment=HOME=/var/lib/homeassistant
+ExecStart=/var/lib/homeassistant/bin/hass -c "/var/lib/homeassistant/.homeassistant"
+
+[Install]
+WantedBy=multi-user.target
