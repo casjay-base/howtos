@@ -321,7 +321,7 @@ pifacedigitalio==3.0.5
 piglow==1.2.4
 pigpio==1.35
 pilight==0.1.1
-Pillow==5.2.0
+Pillow==6.2.0
 pizzapi==0.0.3
 PlexAPI==3.0.6
 pluggy==0.8.0
