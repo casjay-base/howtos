@@ -122,7 +122,7 @@ dovado==0.4.1
 dsmr-parser==0.12
 DTLSSocket==0.1.7
 dweepy==0.3.0
-ecdsa==0.13
+ecdsa==0.13.3
 ed25519==1.4
 edp-redy==0.0.2
 einder==0.3.1
