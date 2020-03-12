@@ -337,7 +337,7 @@ proliphix==0.4.1
 prometheus-client==0.2.0
 promise==2.2.1
 protobuf==3.6.1
-psutil==5.4.8
+psutil==5.6.6
 ptyprocess==0.6.0
 pubnub==4.0.10
 pubnubsub-handler==1.0.2
