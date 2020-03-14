@@ -3,16 +3,10 @@
 # Optionally add user
 #adduser --system --shell=/bin/bash --home=/var/lib/homeassistant  homeassistant
 
-wget https://git.casjay.in/global/howtos/raw/branch/master/home-assistant/hass.service -O /etc/systemd/system/hass.service
-wget https://git.casjay.in/global/howtos/raw/branch/master/home-assistant/rpm-packages.txt -O /tmp/hass-rpms.txt
-wget https://git.casjay.in/global/howtos/raw/branch/master/home-assistant/phantomjs -O /usr/local/bin/phantomjs
-wget https://git.casjay.in/global/howtos/raw/branch/master/home-assistant/requirements-el7.txt -O /tmp/hass-pips.txt
-wget https://git.casjay.in/global/howtos/raw/branch/master/home-assistant/hass-nginx.conf -O /etc/nginx/vhosts.d/hass.conf && systemctl restart nginx
+wget https://github.com/casjay/howtos/raw/master/home-assistant/rpm-packages.txt -O /tmp/hass-rpms.txt
+wget https://github.com/casjay/howtos/raw/master/home-assistant/requirements-el7.txt -O /tmp/hass-pips.txt
 
 yum install -y $(cat /tmp/hass-rpms.txt)
-
-git clone https://git.casjay.in/interpreters/python3.git /usr/src/python3
-cd /usr/src/python3 && ./build.sh
 
 #Optional switch to user and clone repo
 #su - homeassistant
