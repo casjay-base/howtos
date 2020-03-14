@@ -5,22 +5,22 @@ yum install -y yum-utils device-mapper-persistent-data lvm2
 yum install -y docker-ce
 
 mkdir /etc/systemd/system/docker.service.d
-wget https://git.casjay.in/global/howtos/raw/branch/master/docker/etc/systemd/system/docker.service.d/docker.conf -O /etc/systemd/system/docker.service.d/docker.conf
+wget https://github.com/casjay/howtos/raw/master/docker/etc/systemd/system/docker.service.d/docker.conf -O /etc/systemd/system/docker.service.d/docker.conf
 
 systemctl enable docker --now
 
-base=https://git.casjay.in/docker/tools/raw/branch/master/usr/local/bin
-for i in docker-compose docker-machine
+base=https://github.com/docker/machine/releases/download/v0.16.0 && \
+curl -L $base/docker-machine-$(uname -s)-$(uname -m) >/tmp/docker-machine && \
+sudo mv /tmp/docker-machine /usr/local/bin/docker-machine && \
+chmod +x /usr/local/bin/docker-machine
+base=https://raw.githubusercontent.com/docker/machine/v0.16.0
+for i in docker-machine-prompt.bash docker-machine-wrapper.bash docker-machine.bash
 do
-  sudo wget "$base/${i}" -O /usr/local/bin/${i} && chmod -f +x /usr/local/bin/$i
+  sudo wget "$base/contrib/completion/bash/${i}" -P /etc/bash_completion.d
 done
 
-base=https://git.casjay.in/docker/tools/raw/branch/master/etc/bash_completion.d
-for i in docker-machine-prompt docker-machine-wrapper docker-machine docker-compose
-do
-  sudo wget "$base/${i}" -O /etc/bash_completion.d/$i
-done
-
+sudo curl -L "https://github.com/docker/compose/releases/download/1.25.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
 
 # Optional install portainer
 mkdir -p /var/lib/docker/storage/portainer && chmod -Rf 777 /var/lib/docker/storage/portainer
