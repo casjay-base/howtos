@@ -1,5 +1,5 @@
 # HowTos  
 Linux howtos  
 These howtos assume that the  
-[configs repo](https://git.casjay.in/global/configs) was used for setup!  
+[configs repo](https://github.com/casjay/configs) was used for setup!  
   
