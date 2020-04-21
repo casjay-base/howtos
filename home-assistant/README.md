@@ -12,7 +12,7 @@ yum install -y $(cat /tmp/hass-rpms.txt)
 #su - homeassistant
 #git clone https://git.casjay.in/systems/hass.git /var/lib/homeassistant/.homeassistant
 
-cd /var/lib/homeassistant && /usr/local/bin/python3 -m venv . && source ./bin/activate
+cd /var/lib/homeassistant && python3 -m venv . && source ./bin/activate
 
 /var/lib/homeassistant/bin/python3 -m pip install --upgrade pip
 /var/lib/homeassistant/bin/python3 -m pip install wheel
