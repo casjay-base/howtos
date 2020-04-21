@@ -14,11 +14,11 @@ yum install -y $(cat /tmp/hass-rpms.txt)
 
 cd /var/lib/homeassistant && /usr/local/bin/python3.6 -m venv . && source ./bin/activate
 
-/var/lib/homeassistant/bin/python3.6 -m pip install --upgrade pip
-/var/lib/homeassistant/bin/python3.6 -m pip install wheel
-/var/lib/homeassistant/bin/python3.6 -m pip install python-openzwave
-/var/lib/homeassistant/bin/python3.6 -m pip install homeassistant 
-/var/lib/homeassistant/bin/python3.6 -m pip install -r /tmp/hass-pips.txt
+/var/lib/homeassistant/bin/python3 -m pip install --upgrade pip
+/var/lib/homeassistant/bin/python3 -m pip install wheel
+/var/lib/homeassistant/bin/python3 -m pip install python-openzwave
+/var/lib/homeassistant/bin/python3 -m pip install homeassistant 
+/var/lib/homeassistant/bin/python3 -m pip install -r /tmp/hass-pips.txt
 systemctl daemon-reload && systemctl enable hass.service
 
 echo 'SUBSYSTEM=="tty", ATTRS{idVendor}=="0658", ATTRS{idProduct}=="0200", SYMLINK+="zwave"' >> /etc/udev/rules.d/99-usb-serial.rules
