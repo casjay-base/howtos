@@ -34,7 +34,7 @@ yum groupinstall 'Development Tools'
 ```
 
 #### Arch  
-``shell
+```shell
 sudo pacman -S nodejs npm
 ```
   
