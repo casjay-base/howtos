@@ -40,3 +40,19 @@ curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 sudo pacman -S nodejs npm
 ```
   
+##### Setup nginx  
+```shell
+curl https://github.com/casjay-base/howtos/raw/master/nodejs/nginx.conf -O /etc/nginx/vhosts.d/myapp.conf
+vim /etc/nginx/vhosts.d/myapp.conf
+systemctl daemon-reload
+systemctl restart nginx
+```
+  
+##### SytemD setup  
+```shell
+curl https://github.com/casjay-base/howtos/raw/master/nodejs/myapp.service -0 /etc/systemd/system/myapp.service
+vim /etc/systemd/system/myapp.service
+systemctl daemon-reload
+systemctl enable --now myapp
+```
+  
