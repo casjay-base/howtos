@@ -27,7 +27,7 @@ nvm use v9.3.0
 ```shell
 sudo apt-get install -y build-essential
 curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
-``  
+```  
 
 #### Redhat/Fedora/CentOS  
 ```shell
