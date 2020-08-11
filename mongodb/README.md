@@ -20,3 +20,6 @@ Restart MongoDB service
 ```shell
 sudo systemctl restart mongod
 ```
+
+#### More on security
+<https://scalegrid.io/blog/10-tips-to-improve-your-mongodb-security/>
