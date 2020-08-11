@@ -29,8 +29,10 @@ mkdir -p /var/lib/docker/storage/mongodb && chmod -Rf 777 /var/lib/docker/storag
 docker run -d \
 --name mongodb \
 --restart=always \
--p localhost:27017:27017 \
+-p 127.0.0.1:27017:27017 \
 -v /var/lib/docker/storage/mongodb:/data/db  \
+-e MONGO_INITDB_ROOT_USERNAME=mongoadmin \
+-e MONGO_INITDB_ROOT_PASSWORD=secret \
 mongo
 ```
   
