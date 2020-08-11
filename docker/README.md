@@ -5,7 +5,7 @@ yum install -y yum-utils device-mapper-persistent-data lvm2
 yum install -y docker-ce
 
 mkdir /etc/systemd/system/docker.service.d
-wget https://github.com/casjay/howtos/raw/master/docker/etc/systemd/system/docker.service.d/docker.conf -O /etc/systemd/system/docker.service.d/docker.conf
+wget https://github.com/casjay-base/howtos/raw/master/docker/etc/systemd/system/docker.service.d/docker.conf -O /etc/systemd/system/docker.service.d/docker.conf
 
 systemctl enable docker --now
 
