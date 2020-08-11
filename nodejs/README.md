@@ -25,12 +25,14 @@ nvm use v9.3.0
 ## Install system specific packages  
 ##### Ubuntu/Debian  
 ```shell
-sudo apt-get install -y build-essential  
+sudo apt-get install -y build-essential
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 ``  
 
 #### Redhat/Fedora/CentOS  
 ```shell
 yum groupinstall 'Development Tools'
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 ```
 
 #### Arch  
@@ -38,7 +40,3 @@ yum groupinstall 'Development Tools'
 sudo pacman -S nodejs npm
 ```
   
-## Install from NodeSource  
-```shell
-curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
-```
