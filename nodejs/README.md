@@ -32,6 +32,11 @@ sudo apt-get install -y build-essential
 ```shell
 yum groupinstall 'Development Tools'
 ```
+
+#### Arch  
+``shell
+sudo pacman -S nodejs npm
+```
   
 ## Install from NodeSource  
 ```shell
