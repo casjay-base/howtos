@@ -12,7 +12,7 @@ Group=daemon
 Restart=always
 StandardOutput=syslog
 StandardError=syslog
-SyslogIdentifier=node-sample
+SyslogIdentifier=node-server
 
 [Install]
 WantedBy=multi-user.target
