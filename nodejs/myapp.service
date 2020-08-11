@@ -1,5 +1,11 @@
+[Unit]
+Description=nodejs - myapp
+After=syslog.target
+After=network.target
+
 [Service]
 ExecStart=node /home/srv-node-sample/index.js
+WorkingDirectory=PathToDir
 User=daemon
 Group=daemon
 Restart=always
