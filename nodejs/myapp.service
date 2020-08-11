@@ -4,10 +4,9 @@ After=syslog.target
 After=network.target
 
 [Service]
-ExecStart=node /home/srv-node-sample/index.js
-WorkingDirectory=PathToDir
+ExecStart=/usr/bin/node /var/lib/node/sites/myapp/index.js
+WorkingDirectory=/var/lib/node/sites/myapp
 Environment=NODE_ENV=production
-ExecStartPre=node i
 User=daemon
 Group=daemon
 Restart=always
