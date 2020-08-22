@@ -3,7 +3,7 @@
 ```shell
 sudo mkdir -p /var/lib/docker/storage/vscode/config
 
-docker create \
+sudo docker run -d \
   --name=code-server \
   -e PUID=0 \
   -e PGID=0 \
