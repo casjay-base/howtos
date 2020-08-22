@@ -1,3 +1,6 @@
+### VS-Code docker
+
+```shell
 sudo mkdir -p /var/lib/docker/storage/vscode/config
 
 docker create \
@@ -12,4 +15,4 @@ docker create \
   -v /var/lib/docker/storage/vscode/config:/config \
   --restart always \
   linuxserver/code-server
-  
+```
