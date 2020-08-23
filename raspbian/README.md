@@ -3,7 +3,7 @@
 Servers:  
 ```shell
 sudo apt update && sudo dist-upgrade -yy -q && reboot || echo "Update has failed"
-sudo apt install git curl gnupg python3 python3-pil libjpeg-dev vim-nox pass lynx net-tools ctags build-essential fim emacs-nox
+sudo apt install git curl gnupg python3 vim-nox pass lynx net-tools ctags build-essential fim emacs-nox
 sudo bash -c "$(curl -LsS https://github.com/casjay-dotfiles/minimal/raw/master/install.sh)"
 sudo GH=casjay bash -c "$(curl -LsS https://github.com/casjay-base/raspbian/raw/master/install.sh)"
 
