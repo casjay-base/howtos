@@ -2,7 +2,7 @@
   
 Install:  
 ```shell
-sudo apt install bluetooth pi-bluetooth bluez blueman pulseaudio pulseaudio-utils pulseaudio-module-bluetooth pulsemixer pulseaudio-dlna 
+sudo apt install bluetooth pi-bluetooth bluez blueman bluealsa 
 ```
   
 Configure Buetooth
