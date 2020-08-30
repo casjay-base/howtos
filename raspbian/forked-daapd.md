@@ -44,22 +44,21 @@ My config:
 general {
 	uid = "root"
 	db_path = "/var/cache/forked-daapd/songs3.db"
-#	db_backup_path = "/var/cache/forked-daapd/songs3.bak"
 	logfile = "/var/log/forked-daapd.log"
 	loglevel = log
 	admin_password = "music"
 	websocket_port = 3688
 	trusted_networks = { "localhost", "192.168", "172.16", "10.", "fd" }
 	ipv6 = yes
-#	cache_path = "/var/cache/forked-daapd/cache.db"
-#	cache_daap_threshold = 1000
-#	speaker_autoselect = no
-#	high_resolution_clock = yes
+	cache_path = "/var/cache/forked-daapd/cache.db"
+	cache_daap_threshold = 1000
+	speaker_autoselect = no
+	high_resolution_clock = yes
 }
 
 # Library configuration
 library {
-	name = "mpd @ %h"
+	name = "%h"
 	port = 3689
 	password = ""
 	directories = { "/mnt/music" }
@@ -94,22 +93,15 @@ library {
 
 # Local audio output
 audio {
-	nickname = "MPDServer"
 	type = "pulseaudio"
-#	server = ""
-#	card = "default"
-#	mixer = ""
-#	mixer_device = ""
-#	sync_disable = false
-#	offset_ms = 0
-#	adjust_period_seconds = 100
 }
 
-#alsa "card name" {
-#	nickname = "Computer"
-#	mixer = ""
-#	mixer_device = ""
+#alsa "hw:1" {
+#	nickname = "Onboard"
+#	mixer = "Analogue"
+#	mixer_device = "hw:1"
 #}
+
 
 fifo {
 	nickname = "fifo"
@@ -165,6 +157,7 @@ streaming {
 	sample_rate = 44100
 	bit_rate = 192
 }
+
 
 ```
 
