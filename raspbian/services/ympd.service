@@ -1,0 +1,11 @@
+[Unit]
+Description=MPD Web GUI 
+After=network.target forked-daapd.service mpd.service
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/local/bin/ympd -w 8080
+
+[Install]
+WantedBy=multi-user.target
