@@ -9,6 +9,24 @@ systemctl enable --now forked-daapd.service
 sudo apt-get install build-essential git autotools-dev autoconf automake libtool gettext gawk gperf antlr3 libantlr3c-dev libconfuse-dev libunistring-dev libsqlite3-dev libavcodec-dev libavformat-dev libavfilter-dev libswscale-dev libavutil-dev libasound2-dev libmxml-dev libgcrypt20-dev libavahi-client-dev zlib1g-dev libevent-dev libplist-dev libsodium-dev libjson-c-dev libwebsockets-dev libcurl*-dev
 ```
 
+Setup pulseaudio:  
+```shell
+echo "
+# systemd service file for Pulseaudio running in system mode
+[Unit]
+Description=Pulseaudio sound server
+Before=sound.target
+
+[Service]
+ExecStart=/usr/bin/pulseaudio --system --disallow-exit
+
+[Install]
+WantedBy=multi-user.target
+" | sudo tee > /etc/systemd/system/pulseaudio.service 
+systemctl enable pulseaudio --now
+```
+
+
 My config
 ```text
 
