@@ -1,0 +1,10 @@
+# systemd service file for Pulseaudio running in system mode
+[Unit]
+Description=Pulseaudio sound server
+Before=sound.target
+
+[Service]
+ExecStart=/usr/bin/pulseaudio --system --disallow-exit
+
+[Install]
+WantedBy=multi-user.target
