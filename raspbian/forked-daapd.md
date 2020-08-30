@@ -12,6 +12,13 @@ echo "deb http://www.gyfgafguf.dk/raspbian/forked-daapd/ $(dpkg --status tzdata|
 systemctl enable --now forked-daapd.service
 ```
 
+Setup access:  
+```shell
+adduser root pulse
+adduser root bluetooth
+adduser root pulse-access
+```
+
 Setup pulseaudio:  
 ```shell
 echo "
@@ -159,4 +166,89 @@ streaming {
 	bit_rate = 192
 }
 
+```
+
+/etc/pulse/system.pa  
+```text
+#!/usr/bin/pulseaudio -nF
+# This file is part of PulseAudio.
+
+
+load-module module-device-restore
+load-module module-stream-restore
+load-module module-card-restore
+load-module module-augment-properties
+load-module module-switch-on-port-available
+load-module module-alsa-sink
+load-module module-alsa-source device=hw:1,0
+
+.ifexists module-udev-detect.so
+load-module module-udev-detect
+.else
+load-module module-detect
+.endif
+
+.ifexists module-jackdbus-detect.so
+.nofail
+load-module module-jackdbus-detect channels=2
+.fail
+.endif
+
+.ifexists module-bluetooth-policy.so
+load-module module-bluetooth-policy
+.endif
+
+.ifexists module-bluetooth-discover.so
+load-module module-bluetooth-discover
+.endif
+
+.ifexists module-esound-protocol-unix.so
+load-module module-esound-protocol-unix
+.endif
+
+load-module module-native-protocol-unix
+load-module module-esound-protocol-tcp
+load-module module-native-protocol-tcp
+load-module module-zeroconf-publish
+load-module module-rtp-recv
+
+
+.ifexists module-gsettings.so
+.nofail
+load-module module-gsettings
+.fail
+.endif
+
+load-module module-default-device-restore
+load-module module-rescue-streams
+load-module module-always-sink
+load-module module-intended-roles
+load-module module-suspend-on-idle
+
+.ifexists module-console-kit.so
+load-module module-console-kit
+.endif
+.ifexists module-systemd-login.so
+load-module module-systemd-login
+.endif
+
+load-module module-position-event-sounds
+load-module module-role-cork
+load-module module-filter-heuristics
+load-module module-filter-apply
+#set-default-sink output
+#set-default-source input
+```
+
+/etc/pulse/daemon.conf
+```text
+# This file is part of PulseAudio.
+daemonize = no
+allow-module-loading = yes
+use-pid-file = yes
+system-instance = yes
+local-server-type = system
+default-script-file = /etc/pulse/system.pa
+enable-remixing = yes
+remixing-use-all-sink-channels = yes
 ```
