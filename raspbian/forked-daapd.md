@@ -86,9 +86,9 @@ library {
 # Local audio output
 audio {
 	nickname = "MPDServer"
-	type = "alsa"
+	type = "pulseaudio"
 #	server = ""
-	card = "default"
+#	card = "default"
 #	mixer = ""
 #	mixer_device = ""
 #	sync_disable = false
