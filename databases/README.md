@@ -23,6 +23,4 @@ sudo curl -o /etc/yum.repos.d/mssql-server.repo https://packages.microsoft.com/c
 sudo yum install -y mssql-server
 sudo /opt/mssql/bin/mssql-conf setup
 systemctl status mssql-server
-
-
 ```
