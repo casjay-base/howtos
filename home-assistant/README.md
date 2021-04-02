@@ -1,4 +1,5 @@
 # Home-Assistant on CentOS 7
+
 ```bash
 # Optionally add user
 #adduser --system --shell=/bin/bash --home=/var/lib/homeassistant  homeassistant
@@ -25,5 +26,4 @@ echo 'SUBSYSTEM=="tty", ATTRS{idVendor}=="0658", ATTRS{idProduct}=="0200", SYMLI
 echo 'SUBSYSTEM=="tty", ATTRS{idVendor}=="067b", ATTRS{idProduct}=="2303", SYMLINK+="gps"' >> /etc/udev/rules.d/99-usb-serial.rules
 
 deactivate
-
 ```

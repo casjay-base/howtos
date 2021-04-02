@@ -1,4 +1,5 @@
 # CentOS
+
 ```bash
 sudo yum install -y ffmpeg gstreamer1-libav x264 x265 git curl gnupg2
 sudo yum install -y nodejs
@@ -11,6 +12,7 @@ chmod +x INSTALL/centos.sh && INSTALL/centos.sh
 ```
 
 # Debian
+
 ```bash
 sudo apt update
 sudo apt install ffmpeg libav-tools x264 x265 git curl gnupg2

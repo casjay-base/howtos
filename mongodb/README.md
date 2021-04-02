@@ -7,22 +7,29 @@ sudo systemctl enable --now mongod
 ```
 
 #### Secure it
+
 ```shell
 sudo vim /etc/mongodb.conf
 ```
+
 ##### add this to the config
+
 ```text
 net:
   port: 27017
   bindIp: 127.0.0.1
 ```
+
 ##### Restart MongoDB service
+
 ```shell
 sudo systemctl restart mongod
 ```
   
 ---
+
 #### docker install  
+
 ```shell
 mkdir -p /var/lib/docker/storage/mongodb && chmod -Rf 777 /var/lib/docker/storage/mongodb
 
@@ -37,4 +44,5 @@ mongo
 ```
   
 #### More on security
+
 <https://scalegrid.io/blog/10-tips-to-improve-your-mongodb-security/>

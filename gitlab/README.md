@@ -1,5 +1,6 @@
 ## GitLab Install guide
-```
+
+```shell
 curl -s https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.rpm.sh | sudo bash  
 EXTERNAL_URL="https://gitlab.example.com"  yum install -y gitlab-ce  
   
@@ -12,8 +13,10 @@ curl -L https://packages.gitlab.com/install/repositories/runner/gitlab-runner/sc
 sudo yum install gitlab-runner  
 /usr/share/gitlab-runner/post-install  
 ```
-### Gitlab Docker   
-```
+
+## Gitlab Docker
+
+```shell
 docker volume create gitlab-config  
 docker volume create gitlab-logs
 docker volume create gitlab-ce

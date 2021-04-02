@@ -17,7 +17,7 @@ vi .xo-server.yaml # mounts: '/': '../xo-web/dist/'
 yarn start 
 ```
 
-# xen-orchestra - Debian
+## xen-orchestra - Debian
 
 ```bash
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
@@ -36,7 +36,7 @@ vi .xo-server.yaml # mounts: '/': '../xo-web/dist/'
 yarn start 
 ```
 
-# xen-orchestra - Updating 
+## xen-orchestra - Updating
 
 ```bash
 cd /opt/xen-orchestra/

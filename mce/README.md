@@ -1,5 +1,7 @@
 # CouchPotato/HeadPhones/SickRage/Plex/Emby install
+
 ## CentOS/RedHat/SL 7
+
 ```bash
 yum groupinstall -y "Development Tools"
 yum -y install curl gcc gettext git libmediainfo libzen mediainfo p7zip par2cmdline python-configobj sqlite tar unzip wget unrar
@@ -13,6 +15,7 @@ mount -a
 ```
 
 ### CouchPotato
+
 ```bash
 yum install -y transmission-daemon
 rm -Rf /usr/src/python2 /usr/src/python3
@@ -44,6 +47,7 @@ history -c && history -w && exit
 ```
 
 ### HeadPhones
+
 ```bash
 yum install -y transmission-daemon
 rm -Rf /usr/src/python2 /usr/src/python3
@@ -75,6 +79,7 @@ history -c && history -w && exit
 ```
 
 ### SickRage
+
 ```bash
 yum install -y transmission-daemon
 rm -Rf /usr/src/python2 /usr/src/python3
@@ -106,6 +111,7 @@ history -c && history -w && exit
 ```
 
 ### Plex
+
 ```bash
 yum install ffmpeg
 yum install -y https://downloads.plex.tv/plex-media-server/1.14.0.5470-9d51fdfaa/plexmediaserver-1.14.0.5470-9d51fdfaa.x86_64.rpm 
@@ -121,6 +127,7 @@ cp -Rf /tmp/plex/{etc,root,var}* /
 ```
 
 ### Emby
+
 ```bash
 yum install ffmpeg
 yum install -y https://github.com/MediaBrowser/Emby.Releases/releases/download/3.5.3.0/emby-server-rpm_3.5.3.0_x86_64.rpm
@@ -129,6 +136,7 @@ go to http://yourserverip:8096/ and configure it
 ```
 
 ### Airsonic
+
 ```bash
 mkdir -p /var/airsonic
 yum install java-1.8.0-openjdk-headless -y
