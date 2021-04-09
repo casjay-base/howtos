@@ -38,5 +38,5 @@ rm minikube
   
 Sources:  
 <https://www.youtube.com/watch?oILc0ywDVTk>  
-<https://rancher.com/docs/rancher/v2.x/en/installation/requirements/installing-docker/>
+<https://rancher.com/docs/rancher/v2.x/en/installation/requirements/installing-docker/>  
 <https://rancher.com/docs/rancher/v2.x/en/installation/other-installation-methods/single-node-docker/>  
