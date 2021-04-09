@@ -23,7 +23,6 @@ mount -a
 
 useradd --system --shell /bin/bash --comment 'Git Version Control' --create-home --home-dir /home/git git
 
-
 mkdir -p /var/lib/gitea/{custom,data,indexers,public,log}
 chown git:git /var/lib/gitea/{data,indexers,log}
 chmod 750 /var/lib/gitea/{data,indexers,log}
